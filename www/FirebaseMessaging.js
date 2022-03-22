@@ -80,4 +80,9 @@ module.exports = {
             exec(resolve, reject, PLUGIN_NAME, "deleteChannel", [channelId]);
         });
     }
+    getInstallerPackageName: function() {
+        return new Promise(function(resolve, reject) {
+            exec(resolve, reject, PLUGIN_NAME, "getInstallerPackageName", []);
+        });
+    }
 };
