@@ -246,6 +246,13 @@ public class FirebaseMessagingPlugin extends ReflectiveCordovaPlugin {
 
         callbackContext.success();
     }
+    
+    @CordovaMethod
+    private void getInstallerPackageName(CallbackContext callbackContext) {
+        Context context = cordova.getActivity().getApplicationContext();
+        String installerPackageName = context.getPackageManager().getInstallerPackageName(context.getPackageName());
+        callbackContext.success(installerPackageName);
+    }
 
     @Override
     public void onNewIntent(Intent intent) {
